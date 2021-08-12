@@ -1,7 +1,7 @@
 <template>
-  <div class="antiqua">
+  <div class="zerpfy">
     <v-container fluid>
-        <v-row class="mb-12 mt-2" justify="center"><h1>Data on Zerpfy vaccinations up to {{ date }}</h1></v-row>
+        <v-row class="mb-12 mt-2" justify="center"><h1>Data on Antiqua vaccinations up to {{ date }}</h1></v-row>
     </v-container>
     <v-container fluid>
           <v-row v-if="loaded">
@@ -35,10 +35,12 @@
           <v-row v-if="loaded">
             <v-spacer />
               <v-col md="3" align="center">
-                <Piechart :chartData="this.ordersByDist" :chartLabels="this.healthcareDists" />
+              <h4>Orders</h4>
+              <Piechart :chartData="this.ordersByDist" :chartLabels="this.healthcareDists" />
             </v-col>
             <v-col md="3" align="center">
-                <Piechart :chartData="this.injectionsByDist" :chartLabels="this.healthcareDists" />
+              <h4>Injections</h4>
+              <Piechart :chartData="this.injectionsByDist" :chartLabels="this.healthcareDists" />
             </v-col>
             <v-spacer />
           </v-row>
@@ -52,7 +54,7 @@
 
   export default {
     components: { Piechart },
-    name: 'Solars',
+    name: 'Zerpfyz',
     data() {
       return {
         date: new Date().toISOString().substr(0, 10),
@@ -75,7 +77,7 @@
       }
 
       this.apiDownload = await API.getAllZerpfys()
-      this.antiquas = this.apiDownload.length
+      this.zerpfys = this.apiDownload.length
       this.apiDownload.forEach(element => {
         this.totalInjections += element.injections
         switch(element.healthCareDistrict) {

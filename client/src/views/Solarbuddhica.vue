@@ -1,5 +1,5 @@
 <template>
-  <div class="antiqua">
+  <div class="solar">
     <v-container fluid>
         <v-row class="mb-12 mt-2" justify="center"><h1>Data on Solarbuddhica vaccinations up to {{ date }}</h1></v-row>
     </v-container>
@@ -7,7 +7,7 @@
           <v-row v-if="loaded">
             <v-spacer />
             <v-col md="4" align="center">
-              <h3>Overall Solarbuddhica vaccination orders</h3>
+              <h3>Overall Aolarbuddhica vaccination orders</h3>
               <v-simple-table>
                   <thead>
                     <tr>
@@ -35,10 +35,12 @@
           <v-row v-if="loaded">
             <v-spacer />
               <v-col md="3" align="center">
-                <Piechart :chartData="this.ordersByDist" :chartLabels="this.healthcareDists" />
+              <h4>Orders</h4>
+              <Piechart :chartData="this.ordersByDist" :chartLabels="this.healthcareDists" />
             </v-col>
             <v-col md="3" align="center">
-                <Piechart :chartData="this.injectionsByDist" :chartLabels="this.healthcareDists" />
+              <h4>Injections</h4>
+              <Piechart :chartData="this.injectionsByDist" :chartLabels="this.healthcareDists" />
             </v-col>
             <v-spacer />
           </v-row>
@@ -75,7 +77,7 @@
       }
 
       this.apiDownload = await API.getAllSolarbuddhicas()
-      this.antiquas = this.apiDownload.length
+      this.solars = this.apiDownload.length
       this.apiDownload.forEach(element => {
         this.totalInjections += element.injections
         switch(element.healthCareDistrict) {

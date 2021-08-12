@@ -35,10 +35,12 @@
           <v-row v-if="loaded">
             <v-spacer />
               <v-col md="3" align="center">
-                <Piechart :chartData="this.ordersByDist" :chartLabels="this.healthcareDists" />
+              <h4>Orders</h4>
+              <Piechart :chartData="this.ordersByDist" :chartLabels="this.healthcareDists" />
             </v-col>
             <v-col md="3" align="center">
-                <Piechart :chartData="this.injectionsByDist" :chartLabels="this.healthcareDists" />
+              <h4>Injections</h4>
+              <Piechart :chartData="this.injectionsByDist" :chartLabels="this.healthcareDists" />
             </v-col>
             <v-spacer />
           </v-row>
