@@ -44,9 +44,9 @@ export default {
         labels: this.chartLabels,
         datasets: [
           {
-            borderColor: '#289062',
+            borderColor: '#6FDE6E',
             borderWidth: 1,
-            backgroundColor: '#289062',
+            backgroundColor: '#6FDE6E',
             data: this.chartData
           }
         ]

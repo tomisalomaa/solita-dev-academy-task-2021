@@ -71,6 +71,25 @@ module.exports = class API {
         }
     }
 
+    static async getAntiquaDistricts(req,res) {
+      try {
+          const districtInfo = await vaccination.antiquaModel.aggregate([
+            {
+              '$group': {
+                '_id': '$healthCareDistrict', 
+                'ordersByDistrict': {
+                  '$sum': 1
+                }
+              }
+            }
+          ])
+          res.status(200).json(districtInfo)
+      } catch (e) {
+          res.status(404).json({message: "Antiqua district data not found!"})
+          console.log("Error while getting Antiqua district data:", e)
+      }
+    }
+
     static async getAllSolar(req,res) {
         try {
             const solars = await vaccination.solarModel.find()
@@ -81,6 +100,25 @@ module.exports = class API {
         }
     }
 
+    static async getSolarDistricts(req,res) {
+      try {
+          const districtInfo = await vaccination.solarModel.aggregate([
+            {
+              '$group': {
+                '_id': '$healthCareDistrict', 
+                'ordersByDistrict': {
+                  '$sum': 1
+                }
+              }
+            }
+          ])
+          res.status(200).json(districtInfo)
+      } catch (e) {
+          res.status(404).json({message: "Solarbuddhica district data not found!"})
+          console.log("Error while getting Solarbuddhica district data:", e)
+      }
+    }
+
     static async getAllZerpfy(req,res) {
         try {
             const zerpfys = await vaccination.zerpfyModel.find()
@@ -89,5 +127,24 @@ module.exports = class API {
             res.status(404).json({message: "Zerpfy data not found!"})
             console.log("Error while getting Zerpfy data:", e)
         }
+    }
+
+    static async getZerpfyDistricts(req,res) {
+      try {
+          const districtInfo = await vaccination.solarModel.aggregate([
+            {
+              '$group': {
+                '_id': '$healthCareDistrict', 
+                'ordersByDistrict': {
+                  '$sum': 1
+                }
+              }
+            }
+          ])
+          res.status(200).json(districtInfo)
+      } catch (e) {
+          res.status(404).json({message: "Zerpfy district data not found!"})
+          console.log("Error while getting Zerpfy district data:", e)
+      }
     }
 }

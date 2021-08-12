@@ -30,9 +30,9 @@ export default {
         datasets: [{
             data: this.chartData,
             backgroundColor: [
-              'rgb(255, 99, 132)',
-              'rgb(54, 162, 235)',
-              'rgb(255, 205, 86)'
+              '#A691AE',
+              '#235FA4',
+              '#0A284B'
             ],
     hoverOffset: 4
         }]
