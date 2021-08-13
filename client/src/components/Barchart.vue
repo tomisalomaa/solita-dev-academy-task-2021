@@ -1,59 +1,65 @@
 <script>
-import { Bar } from 'vue-chartjs'
+import { Bar } from "vue-chartjs";
 
 export default {
   extends: Bar,
   props: {
     chartData: {
       type: Array,
-      required: true
+      required: true,
     },
     chartLabels: {
-        type: Array,
-        required: true
-    }
+      type: Array,
+      required: true,
+    },
   },
-  data () {
-      return {
-        options: {
-          scales: {
-            yAxes: [{
+  data() {
+    return {
+      options: {
+        scales: {
+          yAxes: [
+            {
               ticks: {
-                beginAtZero: true
+                beginAtZero: true,
               },
               gridLines: {
-                display: true
-              }
-            }],
-            xAxes: [ {
+                display: true,
+              },
+            },
+          ],
+          xAxes: [
+            {
               gridLines: {
-                display: false
-              }
-            }]
-          },
-          legend: {
-            display: false
-          },
-          responsive: true,
-          maintainAspectRatio: false
-        }
-      }
+                display: false,
+              },
+            },
+          ],
+        },
+        legend: {
+          display: false,
+        },
+        responsive: true,
+        maintainAspectRatio: false,
+      },
+    };
   },
-  mounted () {
-     this.renderChart({
+  mounted() {
+    this.renderChart(
+      {
         labels: this.chartLabels,
         datasets: [
           {
-            borderColor: '#6FDE6E',
+            borderColor: "#6FDE6E",
             borderWidth: 1,
-            backgroundColor: '#6FDE6E',
-            data: this.chartData
-          }
-        ]
+            backgroundColor: "#6FDE6E",
+            data: this.chartData,
+          },
+        ],
       },
-    this.options)
-  }
-}
+      this.options
+    );
+  },
+};
 </script>
 
 <style>

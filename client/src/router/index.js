@@ -9,37 +9,37 @@ import Zerpfy from '../views/Zerpfy.vue'
 Vue.use(VueRouter)
 
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/vaccinations',
-    name: 'Vaccinations',
-    component: Vaccinations
-  },
-  {
-    path: '/antiqua',
-    name: 'Antiqua',
-    component: Antiqua
-  },
-  {
-    path: '/solarbuddhica',
-    name: 'Solarbuddhica',
-    component: Solarbuddhica
-  },
-  {
-    path: '/zerpfy',
-    name: 'Zerpfy',
-    component: Zerpfy
-  }
-]
+    {
+        path: '/',
+        name: 'Home',
+        component: Home
+    },
+    {
+        path: '/vaccinations',
+        name: 'Vaccinations',
+        component: Vaccinations
+    },
+    {
+        path: '/antiqua',
+        name: 'Antiqua',
+        component: Antiqua
+    },
+    {
+        path: '/solarbuddhica',
+        name: 'Solarbuddhica',
+        component: Solarbuddhica
+    },
+    {
+        path: '/zerpfy',
+        name: 'Zerpfy',
+        component: Zerpfy
+    }
+];
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
-})
+    mode: 'history',
+    base: process.env.BASE_URL,
+    routes
+});
 
 export default router
