@@ -2,8 +2,12 @@
 
 This exercise is based on https://github.com/solita/vaccine-exercise-2021. Developed for applying to Solita Dev Akatemia (fall, 2021).
 
-## Introduction
-THL has ordered us to create a vaccination database which contains information about vaccine orders and vaccinations. We have received files which contains the base data for the application. The Orders are in different files named by the manufacturer of a vaccine. Injections must be used in 30 days after the arrival of the bottle.
+## Live demo
+
+A demo of this app is deployed [here on Heroku](https://fathomless-fjord-13408.herokuapp.com/).
+The database for the demo is on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
+
+Note: both the Heroku and Atlas platforms have a tendency to go into an "inactive" mode if no calls have been made in a certain period of time. If the demo page seems to load for a long time, this might be the case. The services wake themselves up when requests are detected so trying again a bit later should do it.
 
 ## Instructions - How to install and run the app
 
