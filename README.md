@@ -14,19 +14,19 @@ After Node.js is available, clone or copy the contents of this repository and fo
 
 ### 1) Installing backend and frontend
 
-1. Navigate to /server/ folder of the project and install dependencies with command:
+Navigate to /server/ folder of the project and install dependencies with command:
 
     npm install
 
-2. Repeat step 1 in /client/ to install the frontend
+Repeat above in /client/ to install the frontend
 
 ### 2) Running the app
 
-1. Start server by running the following command inside the /server/ directory:
+Start server by running the following command inside the /server/ directory:
 
     npm run dev
 
-2. Start the client from the /client/ directory with the command:
+Start the client from the /client/ directory with the command:
 
     npm start serve
 
