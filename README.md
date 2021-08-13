@@ -11,10 +11,62 @@ Note: both the Heroku and Atlas platforms have a tendency to go into an "inactiv
 
 ## Instructions - How to install and run the app
 
-### Before installation
+### Before installing the app
 
 Make sure Node.js is installed. If not installed, visit [here](https://nodejs.org/en/).
-After Node.js is available, clone or copy the contents of this repository and follow the steps below.
+
+The app has been developed with a MongoDB running locally and later deployed to connect to the MongoDB Atlas.
+If you have no database solution of your own available or you want to follow through completely without the need to change app configurations, consider installing [MongoDB local](https://www.mongodb.com/try/download/community) and [MongoDB Database tools](https://www.mongodb.com/try/download/database-tools).
+
+Afterwards clone or copy the contents of this repository and follow the steps below.
+
+### 0) Building the database
+
+If you already have a MongoDB set up, you can skip to "Creating the database, collections and feeding the source data as collection documents" to set up databases and collections with correct names and to import the .source files.
+
+/server/.env holds the DB_URI address that should be updated if these instructions are not followed and you wish to use your own.
+
+If you just installed MongoDB and tools, prepare for some command line gymnastics out-of-the-box.
+
+#### Initializing
+
+Start byh navigating to the directory MongoDB installed and run "mongod.exe" from the /bin folder. On Windows the default path for the exe is:
+
+        C:\Program Files\MongoDB\Server\5.0\bin\mongod.exe
+
+If the database does not initialize but the process closes instead, this is most likely due to a missing db folder. In the case of Windows-platform, the required directory has to be created:
+
+    C:\data\db
+    
+After this running "mongod.exe" should initialize local database. Leave the process running and continue to creating the database.
+
+#### Creating the database, collections and feeding the source data as collection documents
+
+1) Run "mongo.exe" from the /bin directory to start the mongo shell for manipulating the local database. Give the following command in the shell to create a new database called "vaccinedb":
+
+        use vaccinedb
+    
+ Shell should confirm the switch to vaccinedb. Let the Mongo Shell be as is, next we'll create collections and feed the .source data.
+ 
+ 2) With a new terminal / command prompt window navigate to the MongoDB Tools /bin directory. Replace the <path-to-source-files-in-git-repo> accordingly as well as the mongodb uri if needed. Otherwise give the following commands to use the mongoimport tool to create and fill database collections:
+
+        mongoimport --uri mongodb://localhost:27017/vaccinedb --collection vaccines --type json --file <path-to-source-files-in-git-repo>/vaccinations.source
+        
+        mongoimport --uri mongodb://localhost:27017/vaccinedb --collection solarbuddhica --type json --file <path-to-source-files-in-git-repo>/SolarBuddhica.source
+        
+        mongoimport --uri mongodb://localhost:27017/vaccinedb --collection antiqua --type json --file <path-to-source-files-in-git-repo>/Antiqua.source
+        
+        mongoimport --uri mongodb://localhost:27017/vaccinedb --collection zerpfy --type json --file <path-to-source-files-in-git-repo>/Zerpfy.source
+ 
+ The tool should inform about the success of each import with 0 fails if done correctly.
+ 
+ 3) Return to MongoDB Shell and check that the database and the collections have been created successfully by entering:
+    
+        show dbs
+    
+        show collections
+    
+  That's it! Local database up and running. Leave it be and let's move onwards to install the app itself.
 
 ### 1) Installing backend and frontend
 
@@ -32,9 +84,11 @@ Start server by running the following command inside the /server/ directory:
 
 Start the client from the /client/ directory with the command:
 
-    npm start serve
+    npm run serve
 
 Server should be running at localhost:8080 and client at localhost:8081
+
+Assuming the database is setup and both the server and the client are running, head to http://localhost:8081/ to see if the app works.
 
 ### 3) Build the app
 
@@ -44,11 +98,8 @@ To build the app, run the following command inside the client directory:
 
 A /dist/ directory with the produced build will appear inside the /client/ directory. Copy the /dist/ with its contents into the /server/ directory and configurate server.js as needed for your deployment purposes.
 
-## Task
-
-Make a web application for presenting some interesting data about the vaccinations.
-
-## Technology choices and their use
+    
+## Technology choices
 
 This app has been developed with **M**ongoDB, **E**spress.js, **V**ue.js, **N**ode.js - **MEVN**-stack.
 
@@ -57,6 +108,17 @@ Together with Express and Node they form the backend solution.
 
 Frontend relies a lot on Vuetify to produce something that doesn't break the eyes of the beholder.
 
+
+## Testing
+
+This will be updated when tests are implemented.
+
+
+## Original task
+
+Make a web application for presenting some interesting data about the vaccinations.
+
+    
 ## List of examples given in the original task
 
 For given day like 2021-04-12T11:10:06
@@ -69,6 +131,7 @@ For given day like 2021-04-12T11:10:06
 * How many vaccines are left to use?
 * How many vaccines are going to expire in the next 10 days?
 
+    
 ## Helpful numbers given in the original task
 
 * Total number of orders 5000
@@ -76,7 +139,3 @@ For given day like 2021-04-12T11:10:06
 * "2021-03-20" arrived 61 orders.
 * When counted from "2021-04-12T11:10:06.473587Z" 12590 vaccines expired before usage (injections in the expiring bottles 17423
   and injections done from the expired bottles 4833)
-
-## Testing
-
-This will include written info about the tests used for testing the app (hopefully..)
