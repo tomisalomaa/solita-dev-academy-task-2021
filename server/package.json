@@ -1,14 +1,14 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend for Solita vaccination exercise 2021",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Tomi Salomaa, 2021",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",

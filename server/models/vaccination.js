@@ -23,7 +23,7 @@ const antiquaModel = mongoose.model(
     "antiqua"
 )
 const solarModel = mongoose.model(
-    "solar",
+    "solarbuddhica",
     mongoose.Schema({
         id: String,
         orderNumber: Number,
@@ -33,7 +33,7 @@ const solarModel = mongoose.model(
         injections: Number,
         arrived: String
     }),
-    "solar"
+    "solarbuddhica"
 )
 const zerpfyModel = mongoose.model(
     "zerpfy",
