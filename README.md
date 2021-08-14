@@ -98,7 +98,13 @@ To build the app, run the following command inside the client directory:
 
 A /dist/ directory with the produced build will appear inside the /client/ directory. Copy the /dist/ with its contents into the /server/ directory and configurate server.js as needed for your deployment purposes.
 
-    
+### Running tests
+
+Run tests from the /server/ directory with the following command:
+
+     npm run test
+        
+        
 ## Technology choices
 
 This app has been developed with **M**ongoDB, **E**spress.js, **V**ue.js, **N**ode.js - **MEVN**-stack.
@@ -107,11 +113,6 @@ The given resource data is stored in local MongoDB No-SQL database for developme
 Together with Express and Node they form the backend solution.
 
 Frontend relies a lot on Vuetify to produce something that doesn't break the eyes of the beholder.
-
-
-## Testing
-
-This will be updated when tests are implemented.
 
 
 ## Original task
