@@ -48,7 +48,7 @@ After this running "mongod.exe" should initialize local database. Leave the proc
     
  Shell should confirm the switch to vaccinedb. Let the Mongo Shell be as is, next we'll create collections and feed the .source data.
  
- 2) With a new terminal / command prompt window navigate to the MongoDB Tools /bin directory. Replace the <path-to-source-files-in-git-repo> accordingly as well as the mongodb uri if needed. Otherwise give the following commands to use the mongoimport tool to create and fill database collections:
+ 2) With a new terminal / command prompt window navigate to the MongoDB Tools /bin directory. Replace the path-to-source-files-in-git-repo accordingly as well as the mongodb uri if needed. Otherwise give the following commands to use the mongoimport tool to create and fill database collections:
 
         mongoimport --uri mongodb://localhost:27017/vaccinedb --collection vaccines --type json --file <path-to-source-files-in-git-repo>/vaccinations.source
         
