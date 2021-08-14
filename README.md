@@ -107,7 +107,7 @@ Run tests from the /server/ directory with the following command:
         
 ## Technology choices
 
-This app has been developed with **M**ongoDB, **E**spress.js, **V**ue.js, **N**ode.js - **MEVN**-stack.
+This app has been developed with **M**ongoDB, **E**xpress.js, **V**ue.js, **N**ode.js - **MEVN**-stack.
 
 The given resource data is stored in local MongoDB No-SQL database for development and to cloud (MongoDB Atlas) for deployment version of the app.
 Together with Express and Node they form the backend solution.
