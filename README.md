@@ -30,7 +30,7 @@ If you just installed MongoDB and tools, prepare for some command line gymnastic
 
 #### Initializing
 
-Start byh navigating to the directory MongoDB installed and run "mongod.exe" from the /bin folder. On Windows the default path for the exe is:
+Start by navigating to the directory MongoDB installed and run "mongod.exe" from the /bin folder. On Windows the default path for the exe is:
 
         C:\Program Files\MongoDB\Server\5.0\bin\mongod.exe
 
