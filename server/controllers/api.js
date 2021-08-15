@@ -1,4 +1,4 @@
-const vaccination = require("../models/vaccination")
+const vaccination = require("../models/mongooseModels")
 
 module.exports = class API {
     /*
